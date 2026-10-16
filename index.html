@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FD Crispy Bites offers crispy and affordable snacks including Popia Seaweed and Tortilla Cheese Crispy.">
+    <title>FD Crispy Bites</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="top-banner"></div>
+
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="FD Crispy Bites Logo">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Show navigation">
+        ▼
+    </button>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+
+            <img src="images/rabbit 6.png"
+                 alt="FD Crispy Bites Bunny Group"
+                 class="rabbit-group">
+
+            <!-- MOVING BACKGROUND TEXT -->
+            <div class="giant-text-wrapper">
+                <div class="giant-text-track">
+                    <span>CRISPY BITES</span>
+                    <span>CRISPY BITES</span>
+                    <span>CRISPY BITES</span>
+                </div>
+            </div>
+
+            <!-- BUNNY MASCOT -->
+            <img src="images/rabbit 1.png"
+                 alt="FD Crispy Bites Bunny Mascot"
+                 class="hero-bunny">
+
+            <!-- HERO TEXT -->
+            <div class="hero-text">
+
+                <p class="welcome">WELCOME TO</p>
+
+                <h1>FD Crispy Bites</h1>
+
+                <h2>Crunch Into Happiness!</h2>
+
+                <p>
+                    Delicious, crispy and affordable snacks made
+                    for your study, work, movie and chill time.
+                </p>
+
+                <a href="products.html" class="shop-btn">
+                    Shop Now
+                </a>
+
+                <!-- MINI SNACK BADGES -->
+                <div class="snack-badges">
+
+                    <button class="mini-badge" onclick="showSnackInfo('crispy')">
+                        <span>🥨</span>
+                        <p>Crispy</p>
+                    </button>
+
+                    <button class="mini-badge" onclick="showSnackInfo('affordable')">
+                        <span>💰</span>
+                        <p>Affordable</p>
+                    </button>
+
+                    <button class="mini-badge" onclick="showSnackInfo('delicious')">
+                        <span>😋</span>
+                        <p>Delicious</p>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- HERO PRODUCT SHOWCASE -->
+            <div class="hero-image">
+
+                <div class="blob blob-one"></div>
+                <div class="blob blob-two"></div>
+
+                <span class="snack-decor decor-a">▲</span>
+                <span class="snack-decor decor-b">★</span>
+                <span class="snack-decor decor-c">✦</span>
+                <span class="snack-decor decor-d">●</span>
+                <span class="snack-decor decor-e">✦</span>
+                <span class="snack-decor decor-f">~</span>
+                <span class="snack-decor decor-g">●</span>
+                <span class="snack-decor decor-h">★</span>
+                <span class="snack-decor decor-i">~</span>
+                <span class="snack-decor decor-j">✦</span>
+
+                <div class="hero-products">
+
+                    <img src="images/tortilla-cheese.jpg"
+                         alt="Tortilla Cheese Crispy"
+                         class="hero-product tortilla-hero">
+
+                    <img src="images/popia-seaweed.jpg"
+                         alt="Popia Seaweed"
+                         class="hero-product popia-hero">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SLIDING INFORMATION PANEL -->
+        <div class="snack-info-panel" id="snackInfoPanel">
+
+            <button class="snack-info-close"
+                    onclick="closeSnackInfo()"
+                    aria-label="Close information panel">
+                ×
+            </button>
+
+            <div class="snack-info-icon" id="snackInfoIcon">🥨</div>
+
+            <h3 id="snackInfoTitle">Crispy & Crunchy</h3>
+
+            <p id="snackInfoDescription"></p>
+
+        </div>
+
+        <!-- FEATURED PRODUCTS -->
+        <section class="featured">
+
+            <!-- LEFT BUNNIES -->
+            <div class="featured-bunnies bunnies-left">
+                <img src="images/rabbit 1.png" alt="Bunny 1">
+                <img src="images/rabbit 2.png" alt="Bunny 2">
+                <img src="images/rabbit 3.png" alt="Bunny 3">
+            </div>
+
+            <!-- RIGHT BUNNIES -->
+            <div class="featured-bunnies bunnies-right">
+                <img src="images/rabbit 4.png" alt="Bunny 4">
+                <img src="images/rabbit 5.png" alt="Bunny 5">
+                <img src="images/rabbit 1.png" alt="Bunny 6">
+            </div>
+
+            <p class="section-label">OUR SNACKS</p>
+
+            <h2>Featured Products</h2>
+
+            <div class="product-container">
+
+                <!-- POPIA SEAWEED -->
+                <div class="product-card">
+
+                    <img src="images/popia-seaweed.jpg"
+                         alt="FD Crispy Bites Popia Seaweed">
+
+                    <h3>Popia Seaweed</h3>
+
+                    <p>
+                        Crispy, savoury and full of delicious
+                        seaweed flavour.
+                    </p>
+
+                    <a href="products.html" class="buy-btn">
+                        Shop Now 🛒
+                    </a>
+
+                </div>
+
+                <!-- TORTILLA CHEESE -->
+                <div class="product-card">
+
+                    <img src="images/tortilla-cheese.jpg"
+                         alt="FD Crispy Bites Tortilla Cheese Crispy">
+
+                    <h3>Tortilla Cheese Crispy</h3>
+
+                    <p>
+                        Crunchy tortilla bites with delicious
+                        cheesy flavour.
+                    </p>
+
+                    <a href="products.html" class="buy-btn">
+                        Shop Now 🛒
+                    </a>
+
+                </div>
+
+            </div>
+
+            <a href="products.html" class="view-btn">
+                View All Products
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>FD Crispy Bites</h3>
+        <p>Crunch Into Happiness!</p>
+        <p>&copy; 2026 FD Crispy Bites. All Rights Reserved.</p>
+    </footer>
+
+    <!-- NAVIGATION JAVASCRIPT -->
+    <script>
+        const header = document.querySelector("header");
+        const navToggle = document.getElementById("navToggle");
+
+        let navOpened = false;
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 150 && !navOpened) {
+                header.classList.add("nav-hidden");
+                navToggle.classList.add("show");
+            }
+
+            if (window.scrollY <= 150) {
+                header.classList.remove("nav-hidden");
+                navToggle.classList.remove("show");
+                navToggle.innerHTML = "▼";
+                navOpened = false;
+            }
+        });
+
+        navToggle.addEventListener("click", function () {
+            navOpened = !navOpened;
+
+            if (navOpened) {
+                header.classList.remove("nav-hidden");
+                navToggle.innerHTML = "▲";
+            } else {
+                header.classList.add("nav-hidden");
+                navToggle.innerHTML = "▼";
+            }
+        });
+    </script>
+
+    <!-- SNACK INFORMATION JAVASCRIPT -->
+    <script>
+        const snackInfo = {
+            crispy: {
+                icon: "🥨",
+                title: "Crispy & Crunchy!",
+                description: "Our snacks are made to deliver a satisfying crunch in every bite. Perfect for your snack cravings!"
+            },
+
+            affordable: {
+                icon: "💰",
+                title: "Affordable for Everyone!",
+                description: "FD Crispy Bites offers delicious snacks at student-friendly prices, so you can enjoy your favourite treats without spending too much!"
+            },
+
+            delicious: {
+                icon: "😋",
+                title: "Delicious Flavours!",
+                description: "From savoury Popia Seaweed to cheesy Tortilla Cheese Crispy, our snacks are packed with tasty flavours you'll love!"
+            }
+        };
+
+        let currentSnackInfo = null;
+
+        function showSnackInfo(type) {
+            const panel = document.getElementById("snackInfoPanel");
+
+            if (currentSnackInfo === type && panel.classList.contains("open")) {
+                closeSnackInfo();
+                return;
+            }
+
+            const info = snackInfo[type];
+
+            document.getElementById("snackInfoIcon").textContent = info.icon;
+            document.getElementById("snackInfoTitle").textContent = info.title;
+            document.getElementById("snackInfoDescription").textContent = info.description;
+
+            panel.classList.add("open");
+            currentSnackInfo = type;
+        }
+
+        function closeSnackInfo() {
+            document.getElementById("snackInfoPanel").classList.remove("open");
+            currentSnackInfo = null;
+        }
+    </script>
+
+</body>
+</html>

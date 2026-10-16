@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery | FD Crispy Bites</title>
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="gallery-header">
+        <a href="index.html" class="gallery-logo">
+            <img src="images/logo.png" alt="FD Crispy Bites Logo">
+        </a>
+
+        <nav class="gallery-nav">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- GALLERY INTRO -->
+        <section class="gallery-intro">
+            <p class="gallery-label">WELCOME TO OUR GALLERY</p>
+            <h1>Our Crunchy Moments!</h1>
+            <p>
+                Take a look at our delicious snacks and
+                the special moments we've shared along the way!
+            </p>
+        </section>
+
+        <!-- PRODUCT GALLERY -->
+        <section class="gallery-products">
+            <p class="gallery-label">MADE FOR SNACKING</p>
+            <h2>Our Tasty Treats</h2>
+
+            <div class="gallery-grid">
+
+                <div class="gallery-card">
+                    <img src="images/popia-seaweed.jpg"
+                         alt="Popia Seaweed">
+                    <h3>Popia Seaweed 🌿</h3>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="images/tortilla-cheese.jpg"
+                         alt="Tortilla Cheese Crispy">
+                    <h3>Tortilla Cheese Crispy 🧀</h3>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- OUR MOMENTS -->
+        <section class="gallery-moments">
+            
+
+
+            <p class="gallery-label">BEHIND THE CRUNCH</p>
+            <h2>Our Special Moments</h2>
+
+            <p>
+                From preparing our snacks to sharing them
+                with our customers, every moment is part
+                of the FD Crispy Bites journey!
+            </p>
+
+           
+<div class="gallery-moment-grid">
+
+    <div class="gallery-moment-card">
+        <img src="images/campus-event.jpg"
+             alt="FD Crispy Bites Campus Event">
+        <h3>Our Campus Booth 🏫</h3>
+        <p>2 September 2026</p>
+    </div>
+
+    <div class="gallery-moment-card">
+        <img src="images/customer-1.png"
+             alt="Customer with Popia Seaweed">
+        <h3>Happy Customer 🌿</h3>
+        <p>Enjoying Popia Seaweed!</p>
+    </div>
+
+    <div class="gallery-moment-card">
+        <img src="images/customer- 2.jpeg"
+             alt="Customer with Tortilla Cheese Crispy">
+        <h3>Cheesy Happiness 🧀</h3>
+        <p>Our Tortilla Cheese Crispy!</p>
+    </div>
+
+    <div class="gallery-moment-card">
+        <img src="images/customer-3.jpeg"
+             alt="Customer with Popia Seaweed">
+        <h3>Another Happy Customer 💚</h3>
+        <p>Thank you for supporting us!</p>
+    </div>
+
+</div>
+<img src="images/gallery-peeking-bunny.png"
+     alt="Peeking Bunny"
+     class="gallery-bunny">
+        </section>
+
+        <!-- CLOSING -->
+        <section class="gallery-closing">
+            <h2>Craving Something Crunchy?</h2>
+
+            <p>
+                Discover your favourite snacks today!
+            </p>
+
+            <a href="products.html" class="gallery-shop-btn">
+                Explore Our Products 🛒
+            </a>
+        </section>
+<!-- YOUTUBE VIDEO SECTION -->
+<section class="gallery-video">
+
+    <p class="section-label">WATCH & ENJOY</p>
+    <h2>Behind the Crunch! 🎬</h2>
+
+    <p class="video-description">
+        Take a closer look at the world of crunchy snacks!
+    </p>
+
+    <div class="youtube-video">
+        <iframe
+            src="https://www.youtube.com/embed/cD4L0VhVmDI"
+            title="Crunchy Snacks YouTube Short"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+</section>
+    </main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const galleryElements = document.querySelectorAll(
+        ".gallery-intro h1, .gallery-intro p, " +
+        ".gallery-products h2, .gallery-products .gallery-card, " +
+        ".gallery-moments h2, .gallery-moments .gallery-moment-card, " +
+        ".gallery-closing h2, .gallery-closing p, .gallery-closing a"
+    );
+
+    if (!("IntersectionObserver" in window)) {
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("gallery-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12
+    });
+
+    galleryElements.forEach((element) => {
+        element.classList.add("gallery-reveal");
+        observer.observe(element);
+    });
+});
+</script>
+
+ <!-- FOOTER -->
+    <footer>
+        <h3>FD Crispy Bites</h3>
+        <p>Crunch Into Happiness!</p>
+        <p>&copy; 2026 FD Crispy Bites. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

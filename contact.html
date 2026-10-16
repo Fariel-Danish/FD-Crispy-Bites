@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | FD Crispy Bites</title>
+
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header class="contact-header">
+        <div class="navbar">
+
+            <a href="index.html" class="logo">
+                <img src="images/logo.png"
+                     alt="FD Crispy Bites Logo">
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- CONTACT HERO -->
+        <section class="contact-hero">
+            <p class="contact-label">GET IN TOUCH</p>
+
+            
+<h1>Let's Get in Touch!</h1>
+
+<img src="images/rabbit 6.png"
+     alt="FD Crispy Bites Bunny Mascot"
+     class="contact-hero-bunny">
+
+
+            <p class="contact-description">
+                Have a question or craving something crunchy?
+                We'd love to hear from you!
+            </p>
+        </section>
+
+        <!-- SOCIAL MEDIA -->
+        <section class="contact-social">
+
+            <p class="contact-label">STAY CONNECTED</p>
+            <h2>Connect With Us!</h2>
+
+            <div class="contact-social-grid">
+
+                <a href="https://www.instagram.com/fd.crispy.bites/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="contact-social-card">
+
+                    <h3>📸 Instagram</h3>
+                    <p>@fd.crispy.bites</p>
+
+                </a>
+
+                
+<a href="https://www.facebook.com/profile.php?id=61592821941614"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="contact-social-card">
+
+    <h3>💙 Facebook</h3>
+    <p>FD Crispy Bites</p>
+
+</a>
+
+
+                
+<a href="https://wa.me/60186643672"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="contact-social-card">
+
+    <h3>💚 WhatsApp</h3>
+    <p>Chat With Us</p>
+
+</a>
+
+
+            </div>
+        </section>
+
+        <!-- MESSAGE FORM -->
+        <section class="contact-message">
+
+<img src="images/rabbit 3.png"
+     alt="FD Crispy Bites Bunny"
+     class="contact-message-bunny bunny-left">
+
+<img src="images/rabbit 5.png"
+     alt="FD Crispy Bites Bunny"
+     class="contact-message-bunny bunny-right">
+
+            <p class="contact-label">SEND A MESSAGE</p>
+            <h2>We'd Love to Hear From You!</h2>
+
+            <form class="contact-form" id="contactForm">
+
+                <input type="text"
+                       placeholder="Your Name"
+                       required>
+
+                <textarea
+                    placeholder="Your Message"
+                    rows="5"
+                    required></textarea>
+
+                <button type="submit">
+                    Send Message ✉️
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>FD Crispy Bites</h3>
+        <p>Crunch Into Happiness!</p>
+        <p>© 2026 FD Crispy Bites. All Rights Reserved.</p>
+    </footer>
+
+<script>
+document.getElementById("contactForm")
+    .addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.querySelector(
+        ".contact-form input"
+    ).value.trim();
+
+    const message = document.querySelector(
+        ".contact-form textarea"
+    ).value.trim();
+
+    if (!name || !message) {
+        alert("Please fill in your name and message.");
+        return;
+    }
+
+    const phoneNumber = "60186643672";
+
+    const whatsappMessage =
+        `Hello FD Crispy Bites! 🐰\n\n` +
+        `Name: ${name}\n` +
+        `Message: ${message}`;
+
+    const whatsappURL =
+        `https://wa.me/${phoneNumber}?text=` +
+        encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank");
+});
+</script>
+
+</body>
+</html>

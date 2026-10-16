@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Products | FD Crispy Bites</title>
+
+    <meta name="description"
+          content="Explore Popia Seaweed and Tortilla Cheese Crispy from FD Crispy Bites.">
+
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS KHAS PRODUCTS PAGE SAHAJA -->
+    <style>
+
+        /* PRODUCT SHOWCASE LAYOUT */
+
+        .products-collection .products-showcase {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 45px;
+            width: min(1050px, 100%);
+            margin: 45px auto 0;
+        }
+
+        .products-collection .showcase-card {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            align-items: center;
+            min-height: 380px;
+            overflow: hidden;
+            border-radius: 30px;
+            box-shadow: 0 12px 35px rgba(40, 75, 45, 0.15);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .products-collection .showcase-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(40, 75, 45, 0.25);
+        }
+
+        .products-collection .showcase-seaweed {
+            background: #E5EFD5;
+        }
+
+        .products-collection .showcase-cheese {
+            background: #FFF0C2;
+        }
+
+        /* SECOND PRODUCT: IMAGE ON RIGHT */
+
+        .products-collection .showcase-cheese .showcase-image {
+            order: 2;
+        }
+
+        .products-collection .showcase-cheese .showcase-info {
+            order: 1;
+        }
+
+        /* IMAGE AREA */
+
+        .products-collection .showcase-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            min-height: 380px;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .products-collection .showcase-image::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            opacity: 0.45;
+            transform: scale(1.08);
+        }
+
+        .products-collection .showcase-seaweed .showcase-image {
+            background: #DDE8C7;
+        }
+
+        .products-collection .showcase-seaweed .showcase-image::before {
+            background-image: url("images/popia-bg.png");
+        }
+
+        .products-collection .showcase-cheese .showcase-image {
+            background: #FFE8A3;
+        }
+
+        .products-collection .showcase-cheese .showcase-image::before {
+            background-image: url("images/tortilla-bg.png");
+        }
+
+        .products-collection .showcase-image img {
+            position: relative;
+            z-index: 1;
+            display: block;
+            width: 100%;
+            height: 340px;
+            object-fit: contain;
+            transform: scale(1.35);
+            transition: transform 0.45s ease;
+            filter: drop-shadow(0 12px 15px rgba(0, 0, 0, 0.18));
+        }
+
+        .products-collection .showcase-card:hover .showcase-image img {
+            transform: scale(1.5) rotate(-4deg);
+        }
+
+        /* PRODUCT INFORMATION */
+
+        .products-collection .showcase-info {
+            padding: 45px 50px;
+            text-align: left;
+        }
+
+        .products-collection .showcase-number {
+            display: inline-block;
+            margin-bottom: 18px;
+            padding: 9px 18px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.7);
+            color: #39724C;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .products-collection .showcase-info h3 {
+            margin-bottom: 18px;
+            color: #245C38;
+            font-size: clamp(27px, 3vw, 39px);
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .products-collection .showcase-info p {
+            margin-bottom: 24px;
+            color: #345B3D;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .products-collection .showcase-price {
+            margin-bottom: 25px;
+            color: #245C38;
+            font-size: 35px;
+            font-weight: 900;
+        }
+
+        .products-collection .showcase-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            background: #F4A51C;
+            color: white;
+            font-size: 16px;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 6px 16px rgba(244, 165, 28, 0.3);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .products-collection .showcase-btn:hover {
+            transform: translateY(-4px);
+            background: #E9940B;
+        }
+
+        /* MOBILE RESPONSIVE */
+
+        @media (max-width: 768px) {
+
+            .products-collection .products-showcase {
+                gap: 30px;
+                margin-top: 30px;
+            }
+
+            .products-collection .showcase-card {
+                grid-template-columns: 1fr;
+            }
+
+            .products-collection .showcase-image {
+                min-height: 280px;
+            }
+
+            .products-collection .showcase-image img {
+                height: 260px;
+                transform: scale(1.2);
+            }
+
+            .products-collection .showcase-card:hover .showcase-image img {
+                transform: scale(1.3) rotate(-3deg);
+            }
+
+            .products-collection .showcase-cheese .showcase-image {
+                order: 0;
+            }
+
+            .products-collection .showcase-cheese .showcase-info {
+                order: 0;
+            }
+
+            .products-collection .showcase-info {
+                padding: 30px 25px;
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .products-collection .showcase-card,
+            .products-collection .showcase-image img {
+                transition: none;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <div class="top-banner"></div>
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                <img src="images/logo.png"
+                     alt="FD Crispy Bites Logo">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- NAVIGATION ARROW -->
+
+    <button class="nav-toggle"
+            id="navToggle"
+            aria-label="Show navigation">
+        ▼
+    </button>
+
+    <main>
+
+        <!-- PRODUCTS INTRO -->
+
+        <section class="products-intro">
+
+            <p class="section-label">FD CRISPY BITES</p>
+
+            <h1>Our Crunchy Snacks</h1>
+
+            <p>
+                Discover your favourite crunchy treats!
+                Delicious, affordable and perfect for
+                every snacking moment.
+            </p>
+
+            <img src="images/rabbit 6.png"
+                 alt="FD Crispy Bites Bunny Group"
+                 class="products-intro-bunny">
+
+            <!-- MOVING BUNNY PARADE -->
+
+            <div class="products-bunny-marquee">
+
+                <div class="products-bunny-track">
+
+                    <img src="images/rabbit 1.png" alt="Bunny">
+                    <img src="images/rabbit 2.png" alt="Bunny">
+                    <img src="images/rabbit 3.png" alt="Bunny">
+                    <img src="images/rabbit 4.png" alt="Bunny">
+                    <img src="images/rabbit 5.png" alt="Bunny">
+
+                    <!-- REPEATED FOR LOOP -->
+
+                    <img src="images/rabbit 1.png" alt="">
+                    <img src="images/rabbit 2.png" alt="">
+                    <img src="images/rabbit 3.png" alt="">
+                    <img src="images/rabbit 4.png" alt="">
+                    <img src="images/rabbit 5.png" alt="">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCTS COLLECTION -->
+
+        <section class="products-collection">
+
+            <p class="section-label">OUR COLLECTION</p>
+
+            <h2>Pick Your Favourite!</h2>
+
+            <p class="products-subtitle">
+                Two delicious flavours, endless crunchy happiness!
+            </p>
+
+            <!-- NEW PRODUCT SHOWCASE -->
+
+            <div class="products-showcase">
+
+                <!-- POPIA SEAWEED -->
+
+                <article class="showcase-card showcase-seaweed">
+
+                    <div class="showcase-image">
+                        <img src="images/popia-seaweed.jpg"
+                             alt="FD Crispy Bites Popia Seaweed">
+                    </div>
+
+                    <div class="showcase-info">
+
+                        <span class="showcase-number">
+                            PRODUCT 01 🌿
+                        </span>
+
+                        <h3>Popia Seaweed</h3>
+
+                        <p>
+                            Crispy homemade popia packed with
+                            delicious seaweed flavour.
+                            Perfect for studying, movie nights
+                            and snack cravings!
+                        </p>
+
+                        <div class="showcase-price">RM10</div>
+
+                        <a href="https://wa.me/60186643672?text=Hi%20FD%20Crispy%20Bites!%20I%20want%20to%20order%20Popia%20Seaweed."
+                           class="showcase-btn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Order Now 🛒
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TORTILLA CHEESE -->
+
+                <article class="showcase-card showcase-cheese">
+
+                    <div class="showcase-image">
+                        <img src="images/tortilla-cheese.jpg"
+                             alt="FD Crispy Bites Tortilla Cheese Crispy">
+                    </div>
+
+                    <div class="showcase-info">
+
+                        <span class="showcase-number">
+                            PRODUCT 02 🧀
+                        </span>
+
+                        <h3>Tortilla Cheese Crispy</h3>
+
+                        <p>
+                            Crunchy tortilla bites coated
+                            with delicious cheesy flavour.
+                            A tasty snack to enjoy while
+                            studying, working or relaxing!
+                        </p>
+
+                        <div class="showcase-price">RM7</div>
+
+                        <a href="https://wa.me/60186643672?text=Hi%20FD%20Crispy%20Bites!%20I%20want%20to%20order%20Tortilla%20Cheese%20Crispy."
+                           class="showcase-btn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Order Now 🛒
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDER SECTION -->
+
+        <section class="products-cta">
+
+            <h2>Craving Something Crunchy? 😋</h2>
+
+            <p>
+                Your next favourite snack is just one click away!
+                Order your FD Crispy Bites today.
+            </p>
+
+            <a href="https://wa.me/60186643672?text=Hi%20FD%20Crispy%20Bites!%20I%20would%20like%20to%20place%20an%20order."
+               target="_blank"
+               rel="noopener noreferrer">
+                Order via WhatsApp 💬
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <h3>FD Crispy Bites</h3>
+        <p>Crunch Into Happiness!</p>
+        <p>&copy; 2026 FD Crispy Bites. All Rights Reserved.</p>
+    </footer>
+
+
+    <!-- NAVIGATION SCRIPT -->
+
+    <script>
+
+        const header = document.querySelector("header");
+        const navToggle = document.getElementById("navToggle");
+
+        let navOpened = false;
+
+        window.addEventListener("scroll", function () {
+
+            if (window.scrollY > 150 && !navOpened) {
+                header.classList.add("nav-hidden");
+                navToggle.classList.add("show");
+            }
+
+            if (window.scrollY <= 150) {
+                header.classList.remove("nav-hidden");
+                navToggle.classList.remove("show");
+                navOpened = false;
+                navToggle.textContent = "▼";
+            }
+
+        });
+
+        navToggle.addEventListener("click", function () {
+
+            navOpened = !navOpened;
+
+            if (navOpened) {
+                header.classList.remove("nav-hidden");
+                navToggle.textContent = "▲";
+            } else {
+                header.classList.add("nav-hidden");
+                navToggle.textContent = "▼";
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
